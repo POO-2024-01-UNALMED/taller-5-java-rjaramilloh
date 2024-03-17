@@ -19,6 +19,11 @@ public class Ave extends Animal{
 		this.colorPlumas = colorPlumas;
 	}
 	
+	public Ave(String nombre, int edad, String habitat, String genero,String colorPlumas) {
+		super(nombre, edad, habitat, genero);
+		this.colorPlumas = colorPlumas;
+	}
+	
 	public Ave() {
 		
 	}

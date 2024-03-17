@@ -13,6 +13,12 @@ public class Zona {
 		this.animales = animales;
 	}
 	
+	public Zona(String nombre,Zoologico zoo) {
+		this.nombre = nombre;
+		this.zoo= zoo;
+	}
+	
+	
 	public Zona () {
 		
 	}
