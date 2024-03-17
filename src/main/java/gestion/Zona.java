@@ -7,12 +7,6 @@ public class Zona {
 	private Zoologico zoo;
 	private ArrayList <Animal> animales;
 	
-	public Zona(String nombre,Zoologico zoo,ArrayList <Animal> animales) {
-		this.nombre = nombre;
-		this.zoo= zoo;
-		this.animales = animales;
-	}
-	
 	public Zona(String nombre,Zoologico zoo) {
 		this.nombre = nombre;
 		this.zoo= zoo;
@@ -20,7 +14,7 @@ public class Zona {
 	
 	
 	public Zona () {
-		
+		this(null,null);
 	}
 	
 	public void agregarAnimales(Animal crearAnimal) {

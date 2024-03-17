@@ -16,7 +16,7 @@ public class Ave extends Animal{
 	}
 	
 	public Ave() {
-		
+		this(null,0,null,null,null);
 	}
 	
 	@Override

@@ -10,15 +10,6 @@ public class Animal {
 	private String genero;
 	private ArrayList<Zona> zona;
 	
-	
-	public Animal(int totalAnimales, String nombre, int edad, String habitat, String genero, ArrayList<Zona> zona) {
-		this.totalAnimales = totalAnimales;
-		this.nombre = nombre;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
-		this.zona = zona;
-	}
 
 	public Animal(String nombre, int edad, String habitat, String genero) {
 		this.nombre = nombre;
@@ -28,7 +19,7 @@ public class Animal {
 	}
 
 	public Animal() {
-		
+		this(null,0,null,null);
 	}
 	
 	public String toString() {

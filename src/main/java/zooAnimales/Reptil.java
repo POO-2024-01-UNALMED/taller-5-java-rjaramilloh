@@ -19,7 +19,7 @@ public class Reptil extends Animal{
 	}
 
 	public Reptil() {
-		
+		this(null,0,null,null,null,0);
 	}
 
 	@Override

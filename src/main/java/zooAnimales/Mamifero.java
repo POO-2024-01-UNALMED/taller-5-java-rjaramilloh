@@ -16,7 +16,7 @@ public class Mamifero extends Animal {
 	}
 
 	public Mamifero() {
-		
+		this(null,0,null,null,false,0);
 	}
 	public void crearCaballo(String nombre, int edad, String genero ) {
 		setNombre(nombre);

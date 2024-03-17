@@ -6,17 +6,14 @@ public class Zoologico {
 	private String ubicacion;
 	private ArrayList <Zona> zonas;
 	
-	public Zoologico (String nombre, String ubicacion, ArrayList <Zona> zonas) {
-		this.nombre = nombre;
-		this.ubicacion = ubicacion;
-		this.zonas = zonas;
-	}
-	
 	public Zoologico (String nombre, String ubicacion) {
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 	}
 	
+	public Zoologico () {
+		this(null, null);
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -42,10 +39,7 @@ public class Zoologico {
 		this.zonas = zonas;
 	}
 
-	public Zoologico () {
-		
-	}
-	
+
 	public void agregarZonas(Zona zonas) {
 		this.zonas.add(zonas);
 	}

@@ -17,7 +17,7 @@ public class Anfibio extends Animal {
 	}
     
 	public Anfibio() {
-		
+		this(null,0,null,null,null,false);
 	}
 
 	@Override
