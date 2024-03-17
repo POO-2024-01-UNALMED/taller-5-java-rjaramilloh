@@ -2,24 +2,12 @@ package zooAnimales;
 
 import java.util.ArrayList;
 
-import gestion.Zona;
-
 public class Mamifero extends Animal {
 	private ArrayList<Mamifero> listado;
-	public int caballos =0;
-	public int leones =0;
+	public static int caballos =0;
+	public static int leones =0;
 	private boolean pelaje;
 	private int patas;
-	
-	public Mamifero(int totalAnimales, String nombre, int edad, String habitat, String genero, ArrayList<Zona> zona,
-			ArrayList<Mamifero> listado, int caballos, int leones, boolean pelaje, int patas) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		this.listado = listado;
-		this.caballos = caballos;
-		this.leones = leones;
-		this.pelaje = pelaje;
-		this.patas = patas;
-	}
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
 		super(nombre, edad, habitat, genero);
@@ -30,32 +18,30 @@ public class Mamifero extends Animal {
 	public Mamifero() {
 		
 	}
-	public void crearCaballo(String nombre, int edad, String genero, ArrayList<Zona> zona ) {
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
+	public void crearCaballo(String nombre, int edad, String genero ) {
+		setNombre(nombre);
+		setEdad(edad);
+		setGenero(genero);
 		pelaje=true;
 		patas=4;
 		setHabitat("pradera");
-		this.caballos++;
+		caballos++;
 		
 	}
-	public void crearLeon(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
+	public void crearLeon(String nombre, int edad, String genero){
+		setNombre(nombre);
+		setEdad(edad);
+		setGenero(genero);
 		pelaje=true;
 		patas=4;
 		setHabitat("selva");
-		this.leones++;
+		leones++;
 		
 	}
 	
 	public int cantidadMamiferos() {
 		int x = 0;
-		x = this.caballos + this.leones;
+		x = caballos + leones;
 		return x;
 	}
 

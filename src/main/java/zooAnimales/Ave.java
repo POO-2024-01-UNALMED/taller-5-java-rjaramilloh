@@ -6,18 +6,9 @@ import gestion.Zona;
 
 public class Ave extends Animal{
 	private ArrayList<Ave> listado;
-	public int halcones;
-	public int aguilas;
+	public static int halcones;
+	public static int aguilas;
 	private String colorPlumas;
-	
-	public Ave(int totalAnimales, String nombre, int edad, String habitat, String genero, ArrayList<Zona> zona,
-			ArrayList<Ave> listado, int halcones, int aguilas, String colorPlumas) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		this.listado = listado;
-		this.halcones = halcones;
-		this.aguilas = aguilas;
-		this.colorPlumas = colorPlumas;
-	}
 	
 	public Ave(String nombre, int edad, String habitat, String genero,String colorPlumas) {
 		super(nombre, edad, habitat, genero);
@@ -40,7 +31,7 @@ public class Ave extends Animal{
 		super.setZona(zona);
 		colorPlumas="cafe glorioso";
 		setHabitat("montanas");
-		this.halcones++;
+		halcones++;
 		
 	}
 	
@@ -51,12 +42,12 @@ public class Ave extends Animal{
 		super.setZona(zona);
 		colorPlumas="blanco y amarillo";
 		setHabitat("montanas");
-		this.aguilas++;	
+		aguilas++;	
 	}
 	
 	public int cantidadAves() {
 		int x = 0;
-		x = this.halcones + this.aguilas;
+		x = halcones + aguilas;
 		return x;
 	}
 	

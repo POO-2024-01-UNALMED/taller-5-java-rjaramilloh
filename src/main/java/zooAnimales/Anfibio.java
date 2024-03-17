@@ -5,21 +5,10 @@ import gestion.Zona;
 
 public class Anfibio extends Animal {
 	private ArrayList<Anfibio> listado;
-	public int ranas;
-	public int salamandras;
+	public static int ranas;
+	public static int salamandras;
 	private String colorPiel;
 	private boolean venenoso;
-	
-	
-    public Anfibio(int totalAnimales, String nombre, int edad, String habitat, String genero, ArrayList<Zona> zona,
-			ArrayList<Anfibio> listado, int ranas, int salamandras, String colorPiel, boolean venenoso) {
-		super(totalAnimales, nombre, edad, habitat, genero, zona);
-		this.listado = listado;
-		this.ranas = ranas;
-		this.salamandras = salamandras;
-		this.colorPiel = colorPiel;
-		this.venenoso = venenoso;
-	}
 
     public Anfibio( String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
 		super(nombre, edad, habitat, genero);
@@ -44,7 +33,7 @@ public class Anfibio extends Animal {
 		colorPiel="rojo";
 		venenoso = true;
 		setHabitat("selva");
-		this.ranas++;
+		ranas++;
 		
 	}
 	
@@ -56,12 +45,12 @@ public class Anfibio extends Animal {
 		colorPiel="negro y amarillo";
 		venenoso = false;
 		setHabitat("selva");
-		this.salamandras++;	
+		salamandras++;	
 	}
 	
 	public int cantidadAnfibios() {
 		int x = 0;
-		x = this.ranas + this.salamandras;
+		x = ranas + salamandras;
 		return x;
 	}
 

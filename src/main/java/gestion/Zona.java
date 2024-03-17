@@ -19,6 +19,22 @@ public class Zona {
 	}
 	
 	
+	public Zona () {
+		
+	}
+	
+	public void agregarAnimales(Animal crearAnimal) {
+		this.animales.add(crearAnimal);
+	}
+	
+	public int cantidadAnimales () {
+		int cantidadAnimales = 0;
+		for (int i = 0;i < animales.size();i++) {
+			cantidadAnimales=cantidadAnimales+1;
+		}
+		return cantidadAnimales;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -43,19 +59,4 @@ public class Zona {
 		this.animales = animales;
 	}
 
-	public Zona () {
-		
-	}
-	
-	public void agrgarAnimales(Animal animales) {
-		this.animales.add(animales);
-	}
-	
-	public int cantidadAnimales () {
-		int cantidadAnimales = 0;
-		for (int i = 0;i < animales.size();i++) {
-			cantidadAnimales=cantidadAnimales+1;
-		}
-		return cantidadAnimales;
-	}
 }
