@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Reptil extends Animal{
-	private ArrayList<Reptil> listado;
+	private static ArrayList<Reptil> listado;
 	public static int iguanas;
 	public static int serpientes;
 	private String colorEscamas;
@@ -16,6 +16,7 @@ public class Reptil extends Animal{
 		super( nombre, edad, habitat, genero);
 		this.colorEscamas = colorEscamas;
 		this.largoCola = largoCola;
+		Reptil.listado.add(this);
 	}
 
 	public Reptil() {
@@ -27,27 +28,16 @@ public class Reptil extends Animal{
 		return "reptar";
 	}
 	
-	public void crearIguana(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorEscamas="verde";
-		largoCola = 3;
-		setHabitat("humedal");
+	public static Reptil crearIguana(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Reptil Reptil= new Reptil(nombre, edad, "humedal",genero, "verde",3);
 		iguanas++;
-		
+		return Reptil;
 	}
 	
-	public void crearSerpiente(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorEscamas="blanco";
-		largoCola = 1;
-		setHabitat("jungla");
-		serpientes++;	
+	public static Reptil crearSerpiente(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Reptil Reptil =new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
+		serpientes++;
+		return Reptil;
 	}
 	
 	public int cantidadReptiles() {
@@ -56,12 +46,12 @@ public class Reptil extends Animal{
 		return x;
 	}
 	
-	public ArrayList<Reptil> getListado() {
+	public static ArrayList<Reptil> getListado() {
 		return listado;
 	}
 
-	public void setListado(ArrayList<Reptil> listado) {
-		this.listado = listado;
+	public static void setListado(ArrayList<Reptil> listado) {
+		Reptil.listado = listado;
 	}
 
 	public String getColorEscamas() {

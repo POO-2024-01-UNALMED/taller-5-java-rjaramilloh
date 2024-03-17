@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Pez extends Animal{
-	private ArrayList<Pez> listado;
+	private static ArrayList<Pez> listado;
 	public static int salmones;
 	public static int bacalaos;
 	private String colorEscamas;
@@ -15,6 +15,7 @@ public class Pez extends Animal{
 		super(nombre, edad, habitat, genero);
 		this.colorEscamas = colorEscamas;
 		this.cantidadAletas = cantidadAletas;
+		Pez.listado.add(this);
 	}
 
 	public Pez() {
@@ -26,27 +27,16 @@ public class Pez extends Animal{
 		return "nadar";
 	}
 	
-	public void crearSalmon(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorEscamas="rojo";
-		cantidadAletas = 6;
-		setHabitat("oceano");
+	public static Pez crearSalmon(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Pez Pez=new Pez(nombre, edad,"oceano", genero, "rojo", 6);
 		salmones++;
-		
+		return Pez;
 	}
 	
-	public void crearBacalao(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorEscamas="gris";
-		cantidadAletas = 6;
-		setHabitat("oceano");
-		bacalaos++;	
+	public static Pez crearBacalao(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Pez Pez=new Pez(nombre, edad, "oceano", genero, "gris", 6);
+		bacalaos++;
+		return Pez;
 	}
 	
 	public int cantidadPeces() {
@@ -55,12 +45,12 @@ public class Pez extends Animal{
 		return x;
 	}
 	
-	public ArrayList<Pez> getListado() {
+	public static ArrayList<Pez> getListado() {
 		return listado;
 	}
 
-	public void setListado(ArrayList<Pez> listado) {
-		this.listado = listado;
+	public static void setListado(ArrayList<Pez> listado) {
+		Pez.listado = listado;
 	}
 
 	public String getColorEscamas() {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Ave extends Animal{
-	private ArrayList<Ave> listado;
+	private static ArrayList<Ave> listado;
 	public static int halcones;
 	public static int aguilas;
 	private String colorPlumas;
@@ -13,6 +13,7 @@ public class Ave extends Animal{
 	public Ave(String nombre, int edad, String habitat, String genero,String colorPlumas) {
 		super(nombre, edad, habitat, genero);
 		this.colorPlumas = colorPlumas;
+		Ave.listado.add(this);
 	}
 	
 	public Ave() {
@@ -24,25 +25,16 @@ public class Ave extends Animal{
 		return "volar";
 	}
 	
-	public void crearHalcon(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorPlumas="cafe glorioso";
-		setHabitat("montanas");
+	public static Ave crearHalcon(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Ave Ave=new Ave(nombre,edad, "montanas", genero, "cafe glorioso");
 		halcones++;
-		
+		return Ave;
 	}
 	
-	public void crearAguila(String nombre, int edad, String genero, ArrayList<Zona> zona){
-		super.setNombre(nombre);
-		super.setEdad(edad);
-		super.setGenero(genero);
-		super.setZona(zona);
-		colorPlumas="blanco y amarillo";
-		setHabitat("montanas");
-		aguilas++;	
+	public static Ave crearAguila(String nombre, int edad, String genero, ArrayList<Zona> zona){
+		Ave Ave=new Ave(nombre,edad, "montanas", genero, "blanco y amarillo");
+		aguilas++;
+		return Ave;
 	}
 	
 	public int cantidadAves() {
@@ -52,12 +44,12 @@ public class Ave extends Animal{
 	}
 	
 
-	public ArrayList<Ave> getListado() {
+	public static ArrayList<Ave> getListado() {
 		return listado;
 	}
 
-	public void setListado(ArrayList<Ave> listado) {
-		this.listado = listado;
+	public static void setListado(ArrayList<Ave> listado) {
+		Ave.listado = listado;
 	}
 
 	public String getColorPlumas() {
